@@ -34,7 +34,7 @@ db.serialize(() => {
             endereco TEXT
         )
     `);
-    
+
     db.run(`
         CREATE TABLE IF NOT EXISTS produtos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -48,7 +48,7 @@ db.serialize(() => {
             FOREIGN KEY (fornecedor_id) REFERENCES fornecedores (id)
         )
     `);
-    
+
     db.run(`
         CREATE TABLE IF NOT EXISTS clientes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -71,7 +71,7 @@ db.serialize(() => {
             FOREIGN KEY (produto_id) REFERENCES produtos (id)
         )
     `);
-    
+
     db.run(`
         CREATE TABLE IF NOT EXISTS servicos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -190,7 +190,7 @@ app.get('/fornecedores', (req, res) => {
 app.post('/produtos', (req, res) => {
     const { nome, preco, descricao, categoria, quantidade_estoque, dimensoes, fornecedor_id } = req.body;
     const sql = `INSERT INTO produtos (nome, preco, descricao, categoria, quantidade_estoque, dimensoes, fornecedor_id) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-    
+
     db.run(sql, [nome, preco, descricao, categoria, quantidade_estoque, dimensoes, fornecedor_id], function(err) {
         if (err) {
             return res.status(500).json({ message: "Erro ao cadastrar produto", error: err });
@@ -501,17 +501,17 @@ app.get('/buscar-servicos', (req, res) => {
 // ROTA PARA BUSCAR HORÁRIOS DISPONÍVEIS
 app.get('/horarios-disponiveis', (req, res) => {
     const { data, id } = req.query; // id = id do serviço
-  
+
     const todosHorarios = ['08:00','09:00','10:00','11:00','13:00','14:00','15:00','16:00','17:00'];
-  
+
     const sql = `SELECT horario FROM agendamentos WHERE data = ? AND id_servico = ?`;
-  
+
     db.all(sql, [data, id], (err, rows) => {
       if (err) {
         console.error('Erro ao buscar horários ocupados:', err);
         return res.status(500).send('Erro ao buscar horários ocupados');
       }
-  
+
       const ocupados = rows.map(r => String(r.horario).slice(0,5));
       const disponiveis = todosHorarios.filter(h => !ocupados.includes(h));
       res.json(disponiveis);
@@ -545,4 +545,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
-
