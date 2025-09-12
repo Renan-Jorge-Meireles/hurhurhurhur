@@ -1,4 +1,3 @@
-/* ESTILOS PARA A PÁGINA DE PRODUTOS - MESMO ESTILO DAS OUTRAS PÁGINAS */
 body {
     background-color: #f5f7fa;
     font-family: 'Montserrat', sans-serif;
@@ -6,87 +5,104 @@ body {
     padding: 0;
     min-height: 100vh;
     display: flex;
+    flex-direction: row;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* SIDEBAR - ANTIGO HEADER TRANSFORMADO */
+.sidebar {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    width: 260px;
+    min-height: 100vh;
+    padding: 20px;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
     flex-direction: column;
 }
 
-/* HEADER - MESMO ESTILO DA PRIMEIRA PÁGINA */
-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
-    padding: 15px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.cabecalho h2 {
+.sidebar-header h2 {
     color: white;
     font-size: 1.8rem;
     font-weight: 600;
     margin: 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    padding: 5px 0;
 }
 
-nav ul {
+.sidebar nav {
+    flex: 1;
+}
+
+.sidebar nav ul {
     list-style: none;
-    display: flex;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-nav ul li {
-    margin: 0 8px;
+.sidebar nav ul li {
+    margin: 0;
 }
 
-nav ul li a {
+.sidebar nav ul li a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     display: block;
     position: relative;
     font-size: 1rem;
+    border-left: 4px solid transparent;
 }
 
-nav ul li a:hover {
+.sidebar nav ul li a:hover {
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #3498db;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-nav ul li a:hover::after {
-    width: 70%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-left-color: #3498db;
+    transform: translateX(5px);
 }
 
 /* CONTEÚDO PRINCIPAL */
+.main-content {
+    margin-left: 300px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 #main-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 30px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     flex: 1;
+    width: calc(100% - 60px);
 }
 
 h1 {
@@ -157,6 +173,7 @@ input, select, textarea {
     font-size: 1rem;
     transition: all 0.3s ease;
     background-color: #f8f9fa;
+    box-sizing: border-box;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -208,7 +225,7 @@ input[type="button"]:hover {
     background: linear-gradient(135deg, #27ae60, #219653);
 }
 
-/* CONTÊINER DE BOTÕES */
+/* CONTAINER DE BOTÕES */
 .botoes-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -262,6 +279,24 @@ table tr:hover {
     font-weight: 500;
 }
 
+/* ESTILOS ESPECÍFICOS PARA SELECT DE Fornecedores */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%232c3e50' viewBox='0 0 16 16'%3E%3Cpath d='M8 12L2 6h12L8 12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    padding-right: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* FOOTER */
 footer {
     background: linear-gradient(to right, #2c3e50, #4a6491);
@@ -277,8 +312,40 @@ footer p {
     font-weight: 500;
 }
 
+/* BOTÃO TOGGLE PARA MOBILE */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
     form {
         grid-template-columns: 1fr;
     }
@@ -291,32 +358,15 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .cabecalho {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 5px;
-    }
-
     #main-container {
         margin: 15px;
         padding: 20px;
+        width: calc(100% - 30px);
     }
 }
 
 @media (max-width: 480px) {
-    nav ul li a {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-    }
-
-    .cabecalho h2 {
+    .sidebar-header h2 {
         font-size: 1.5rem;
     }
 
@@ -332,30 +382,12 @@ footer p {
         padding: 8px;
     }
 
+    .sidebar nav ul li a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
     .botoes-container {
         grid-template-columns: 1fr;
     }
-}
-
-/* ESTILOS ESPECÍFICOS PARA SELECT DE FORNECEDORES */
-select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%232c3e50' viewBox='0 0 16 16'%3E%3Cpath d='M8 12L2 6h12L8 12z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 12px;
-    padding-right: 40px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-/* ESTILO PARA CAMPOS NUMÉRICOS */
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
 }

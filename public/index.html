@@ -1,99 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-</head>
-<body>
-<header>
-        
-        <div class="logos">
-            <img src="imagens/Planet.png" alt="planet">
-            <img src="imagens/Juke.png" alt="logojuke">
-        </div>
-    <div class="cabecalho">
-        <h2>Controle de Vendas</h2>
-        <nav>
-            <ul>
-                <li><a href="produto.html">Produtos</a></li>
-                <li><a href="cliente.html">Clientes</a></li>
-                <li><a href="funcionarios.html">Funcionarios</a></li>
-                <li><a href="venda.html">Venda</a></li>
-                <li><a href="relatorios.html">Relatórios</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<main>
-    <div class="content">
-        <h1>Sistema JukeBox</h1>
-        <p>Role para baixo para visualizar o mais informações.</p>
-        <p>Inclui seções de navegação, informações de contato, links sociais e informações legais.</p>
-    </div>
-
-</main>
-
-
-<footer>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Sistema</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Recursos</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Produtos</a></li>
-            </div>
-
-            <div class="footer-section">
-                <h3>Suporte</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Centro de Ajuda</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Status do Sistema</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contatar Suporte</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Termos de Uso</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> LGPD</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contrato de Licença</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <ul class="contact-info">
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Av. Paulista, 1000, São Paulo - SP, Brasil</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <span>+55 (11) 99999-9999</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <span>juke@sistema.com.br</span>
-                    </li>
-                </ul>
-            </div>
-
-            
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="footer-bottom-container">
-                <div class="copyright">
-                    &copy; 2025 Sistema Corporativo. Todos os direitos reservados.
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jukebox</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="imagens/CCM.png" class="CCM" alt="CCM Logo">
+                    <img src="imagens/Planet.png" alt="Planet Logo">
+                    <img src="imagens/Juke.png" alt="Juke Logo">
+                    <span class="system-name">Controle de Vendas</span>
                 </div>
+                <nav>
+                    <ul>
+                        <li><a href="produto.html">Produtos</a></li>
+                        <li><a href="cliente.html">Clientes</a></li>
+                        <li><a href="funcionarios.html">Funcionários</a></li>
+                        <li><a href="venda.html">Vendas</a></li>
+                        <li><a href="relatorios.html">Relatórios</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="hero">
+                <h1>Sistema JukeBox</h1>
+                <p>Bem-vindo ao sistema de controle de vendas JukeBox. Aqui você pode gerenciar produtos, clientes, funcionários e acompanhar todas as vendas da sua empresa.</p>
+                <p>Use o menu acima ou os cards abaixo para acessar as diferentes funcionalidades do sistema.</p>
+            </div>
+
+            <h2 class="section-title">Funcionalidades do Sistema</h2>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Gestão de Produtos</h3>
+                    <p>Controle completo do seu estoque, cadastro de produtos, categorias e preços. Mantenha seu inventário sempre atualizado.</p>
+                    <a href="produto.html" class="btn">Acessar</a>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Controle de Clientes</h3>
+                    <p>Gerencie seu relacionamento com clientes, histórico de compras, preferências e informações de contato.</p>
+                    <a href="cliente.html" class="btn">Acessar</a>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Controle de Funcionários</h3>
+                    <p>Administre sua equipe, permissões de acesso, horários e desempenho de cada colaborador.</p>
+                    <a href="funcionarios.html" class="btn">Acessar</a>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-cash-register"></i>
+                    <h3>Controle de Vendas</h3>
+                    <p>Registre vendas, emissão de notas fiscais, controle de comissões e acompanhamento em tempo real.</p>
+                    <a href="venda.html" class="btn">Acessar</a>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Relatórios</h3>
+                    <p>Relatórios detalhados para análise do desempenho das vendas, métricas financeiras e indicadores de performance.</p>
+                    <a href="relatorios.html" class="btn">Acessar</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sistema</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Recursos</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Produtos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Centro de Ajuda</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Status do Sistema</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contatar Suporte</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Termos de Uso</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> LGPD</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contrato de Licença</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Francisco Guarana de Menezes, 476 - Vila Yolanda - PR, Brasil</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+55 (45) 99151-6773</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>dr4kkheim@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sistema Corporativo. Todos os direitos reservados.</p>
                 <div class="legal-links">
                     <a href="#">Privacidade</a>
                     <a href="#">Termos</a>
@@ -101,8 +132,6 @@
                     <a href="#">Acessibilidade</a>
                 </div>
             </div>
-        </div>
-</footer>
-</body>
+        </footer>
+    </body>
 </html>
-

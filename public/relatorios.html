@@ -8,21 +8,26 @@
     <script src="relatorios.js"></script>
 </head>
 <body onload="buscarProdutos()">
-<header>
-    <div class="cabecalho">
-        <h2>Controle de Vendas</h2>
-        <nav>
-            <ul>
-                <li><a href="produto.html">Produtos</a></li>
-                <li><a href="cliente.html">Clientes</a></li>
-                <li><a href="funcionarios.html">Funcionarios</a></li>
-                <li><a href="venda.html">Venda</a></li>
-                <li><a href="relatorios.html">Relatórios</a></li>
-                
-            </ul>
-        </nav>
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="logo-container">
+            <img src="/imagens/CCM.png" alt="CCM" width="150" height="50">
+            <img src="/imagens/Juke.png" alt="Planet" width="150" height="50">
+        </div>
+        <h2>Gestão de Produtos</h2>
     </div>
-</header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="produto.html">Produtos</a></li>
+            <li><a href="cliente.html">Clientes</a></li>
+            <li><a href="funcionarios.html">Funcionários</a></li>
+            <li><a href="venda.html">Vendas</a></li>
+            <li><a href="relatorios.html">Relatórios</a></li>
+        </ul>
+    </nav>
+</aside>
+
 
 <div id="main-container">
     <h1>Relatórios de Vendas</h1>
@@ -34,10 +39,10 @@
         <label for="produto">Produto:</label>
         <input type="text" id="produto" placeholder="Digite o nome do produto">
 
-        <label for="dataInicio">Data Início:</label>
+        <label for="dataInicio">Data inicio:</label>
         <input type="date" id="dataInicio">
 
-        <label for="dataFim">Data Fim:</label>
+        <label for="dataFim">Data final:</label>
         <input type="date" id="dataFim">
 
         <button onclick="buscarRelatorio()" class="alinhaBtns">Buscar</button>
@@ -59,9 +64,5 @@
         </tbody>
     </table>
 </div>
-
-<footer>
-    <p>©2025</p>
-</footer>
 </body>
 </html>

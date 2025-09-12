@@ -1,4 +1,3 @@
-/* ESTILOS PARA A PÁGINA DE VENDA - MESMO ESTILO DAS OUTRAS PÁGINAS */
 body {
     background-color: #f5f7fa;
     font-family: 'Montserrat', sans-serif;
@@ -6,87 +5,104 @@ body {
     padding: 0;
     min-height: 100vh;
     display: flex;
+    flex-direction: row;
+}
+
+/* SIDEBAR - MESMO ESTILO DA PÁGINA DE CLIENTES */
+.sidebar {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    width: 260px;
+    min-height: 100vh;
+    padding: 20px;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
     flex-direction: column;
 }
 
-/* HEADER - MESMO ESTILO DA PRIMEIRA PÁGINA */
-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
-    padding: 15px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.cabecalho h2 {
+.sidebar-header h2 {
     color: white;
     font-size: 1.8rem;
     font-weight: 600;
     margin: 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    padding: 5px 0;
 }
 
-nav ul {
+.sidebar nav {
+    flex: 1;
+}
+
+.sidebar nav ul {
     list-style: none;
-    display: flex;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-nav ul li {
-    margin: 0 8px;
+.sidebar nav ul li {
+    margin: 0;
 }
 
-nav ul li a {
+.sidebar nav ul li a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     display: block;
     position: relative;
     font-size: 1rem;
+    border-left: 4px solid transparent;
 }
 
-nav ul li a:hover {
+.sidebar nav ul li a:hover {
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-left-color: #3498db;
+    transform: translateX(5px);
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #3498db;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-nav ul li a:hover::after {
-    width: 70%;
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 /* CONTEÚDO PRINCIPAL */
+.main-content {
+    margin-left: 300px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 #main-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 30px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     flex: 1;
+    width: calc(100% - 60px);
 }
 
 h1 {
@@ -123,7 +139,7 @@ h2 {
 /* FORMULÁRIOS */
 form {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 25px;
     padding: 20px;
@@ -133,7 +149,7 @@ form {
 }
 
 .full-box {
-    grid-column: span 1;
+    grid-column: span 2;
 }
 
 .half-box {
@@ -157,6 +173,7 @@ input, select {
     font-size: 1rem;
     transition: all 0.3s ease;
     background-color: #fff;
+    box-sizing: border-box;
 }
 
 input:focus, select:focus {
@@ -211,7 +228,7 @@ table th, table td {
 }
 
 table th {
-    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    background: #2573a7;
     color: white;
     font-weight: 600;
     text-align: center;
@@ -269,73 +286,65 @@ table button:hover {
     border: 2px solid #3498db;
 }
 
-/* FOOTER */
-footer {
-    background: linear-gradient(to right, #2c3e50, #4a6491);
-    color: #ecf0f1;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-    margin: 0;
-    font-weight: 500;
+/* BOTÃO TOGGLE PARA MOBILE */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* RESPONSIVIDADE */
-@media (min-width: 768px) {
-    #cliente-form {
-        grid-template-columns: 2fr 1fr;
-        align-items: end;
-    }
-
-    #produto-form {
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: end;
-    }
-
-    .cabecalho {
-        flex-direction: row;
-    }
-
-    nav ul {
-        justify-content: flex-end;
-    }
-}
-
 @media (max-width: 768px) {
-    .cabecalho {
-        flex-direction: column;
-        gap: 15px;
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
     }
 
-    nav ul {
-        justify-content: center;
+    .sidebar.active {
+        transform: translateX(0);
     }
 
-    nav ul li {
-        margin: 5px;
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .full-box, .half-box {
+        grid-column: span 1;
     }
 
     #main-container {
         margin: 15px;
         padding: 20px;
+        width: calc(100% - 30px);
     }
 
-    #produto-form {
-        grid-template-columns: 1fr;
+    table {
+        font-size: 0.8rem;
+    }
+
+    table th, table td {
+        padding: 8px 4px;
     }
 }
 
 @media (max-width: 480px) {
-    nav ul li a {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-    }
-
-    .cabecalho h2 {
+    .sidebar-header h2 {
         font-size: 1.5rem;
     }
 
@@ -344,11 +353,16 @@ footer p {
     }
 
     table {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     table th, table td {
-        padding: 8px;
+        padding: 6px 3px;
+    }
+
+    .sidebar nav ul li a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
     }
 
     #total-venda {
