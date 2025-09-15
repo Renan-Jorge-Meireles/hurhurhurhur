@@ -1,0 +1,3 @@
+POST pode haver erros quando requisita a criação de um processo e é usado mais geralmente
+
+já PUT é mais "absoluto" deve ser usado em processos especificos e não é esperado ter erros ou adições indesejadas
