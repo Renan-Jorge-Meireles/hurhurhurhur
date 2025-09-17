@@ -1,0 +1,138 @@
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS produtos;
+DROP TABLE IF EXISTS funcionario;
+DROP TABLE IF EXISTS fornecedor;
+DROP TABLE IF EXISTS pclientes;
+DROP TABLE if EXISTS pprodutos;
+DROP TABLE IF EXISTS consultas;
+
+-- Tabela de clientes
+CREATE TABLE IF NOT EXISTS clientes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  cpf VARCHAR(14) NOT NULL UNIQUE,
+  telefone VARCHAR(15),
+  email VARCHAR(100),
+  endereco TEXT
+);
+
+-- Inserção de dados na tabela clientes
+INSERT INTO clientes (nome, cpf, telefone, email, endereco)
+VALUES ('Jair Bolsonaro', '123.456.789-08', '(45) 99999-9991', 'emailmito@coisas.xyz', 'Rua manoel afonso, 123, São Miguel do Afonso - RN');
+
+INSERT INTO clientes (nome, cpf, telefone, email, endereco)
+VALUES ('Serjão Berranteiro', '987-654-321-45', '(45) 97475-7457', 'emailberranteiro@coisas.xyz', 'rua do posto, 39, serjão - ES');
+
+INSERT INTO clientes (nome, cpf, telefone, email, endereco)
+VALUES ('Leão XI', '987-654-321-12', '(45) 97475-7457', 'emailvaticano@coisas.xyz', 'rua da ponte, 23, santo padre - ES');
+
+INSERT INTO clientes (nome, cpf, telefone, email, endereco)
+VALUES ('Mauro Camarão', '987-654-321-78', '(45) 97475-7457', 'emailcamarão@coisas.xyz', 'rua camilles, 19, touro - ES');
+
+-- Tabela de produtos
+CREATE TABLE IF NOT EXISTS produtos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  quantidade INTEGER NOT NULL,
+  preco DECIMAL(8,2) NOT NULL, 
+  marca VARCHAR(50)
+);
+  
+-- Inserção de dados na tabela produtos
+INSERT INTO produtos (nome, quantidade, preco, marca)
+VALUES 
+('JBL Boombox 3', 5, 2499.99, 'JBL'),
+('JBL Tune 720BT', 10, 439.99, 'JBL'),
+('Amvox Caixa Amplificadora ACA 1000', 5, 1049.99, 'Amvox'),
+('Amvox Caixa Amplificadora ACA 150 Pop', 10, 219.99, 'Amvox'),
+('Headset Redragon Zeus Pro', 10, 149.99, 'Redragon');
+
+CREATE TABLE IF NOT EXISTS funcionario (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  funcao VARCHAR(30),
+  telefone VARCHAR(15)
+);
+
+INSERT INTO funcionario (nome, funcao, telefone)
+VALUES
+('Léo Lins', 'vendedor', '(11) 97611-5654'),
+('Dom Pedro II', 'entregador', '(21) 99835-4922');
+
+CREATE TABLE IF NOT EXISTS fornecedor (
+  id_fornecedor INTEGER PRIMARY KEY AUTOINCREMENT,
+  cnpj VARCHAR,
+  nome VARCHAR(100) NOT NULL,
+  telefone VARCHAR(15)
+);
+
+INSERT INTO fornecedor (cnpj, nome, telefone)
+VALUES
+('13.890.947/0001-67', 'JBL', '(82) 3377-5171'),
+('31.336.157/0001-16', 'Redragon', '(67) 3541-3412');
+
+--pesquisa de clientes
+CREATE TABLE IF NOT EXISTS pclientes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  cliente_id INTEGER,
+  FOREIGN KEY (cliente_id) REFERENCES clientes (id)
+);
+
+INSERT INTO pclientes (cliente_id)
+VALUES 
+(1),  -- Jair Bolsonaro
+(2);  -- Serjão Berranteiro
+
+--pesquisa funcionario
+CREATE TABLE IF NOT EXISTS pfuncionarios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  funcionario_id INTEGER,
+  nome VARCHAR(100),
+  FOREIGN KEY (funcionario_id) REFERENCES funcionario (id),
+  FOREIGN KEY (nome) REFERENCES funcionario (nome)
+);
+
+INSERT INTO pfuncionarios (funcionario_id, nome)
+VALUES 
+(1, 'Léo Lins'),
+(2, 'Dom Pedro II');
+
+-- pesquisa de produto
+CREATE TABLE IF NOT EXISTS pprodutos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(100),
+  FOREIGN KEY (nome) REFERENCES produtos (nome)
+);
+
+--pesquisa de produtos
+INSERT INTO pprodutos (nome)
+VALUES 
+('JBL Boombox 3'),
+('JBL Tune 720BT'),
+('Amvox Caixa Amplificadora ACA 1000'),
+('Amvox Caixa Amplificadora ACA 150 Pop'),
+('Headset Redragon Zeus Pro');
+
+CREATE TABLE IF NOT EXISTS consultas (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  tipo_consulta VARCHAR(50) NOT NULL,  -- 'cliente', 'produto', 'funcionario', etc.
+  id_consulta INTEGER,                 -- ID do item consultado (opcional)
+  termo_busca VARCHAR(30),            -- Termo usado na busca (se aplicável)
+  data_hora DATETIME DEFAULT CURRENT_TIMESTAMP,
+  usuario VARCHAR(50)                  -- Quem realizou a consulta
+);
+
+-- Inserindo algumas consultas de exemplo
+INSERT INTO consultas (tipo_consulta, id_consulta, termo_busca, usuario)
+VALUES 
+('cliente', 1, NULL, 'admin'),
+('produto', NULL, 'JBL', 'vendedor1'),
+('funcionario', 2, NULL, 'gerente'),
+('produto', NULL, 'Amvox', 'vendedor2'),
+('cliente', NULL, 'Serjão', 'atendente');
+
+
+SELECT * FROM clientes;
+SELECT * FROM produtos;
+SELECT * FROM funcionario;
+select * FROM fornecedor;
