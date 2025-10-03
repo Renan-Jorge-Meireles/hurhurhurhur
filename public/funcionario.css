@@ -87,7 +87,7 @@ body {
     transform: translateX(5px);
 }
 
-/* CONTEÚDO PRINCIPAL */
+/* CONTEÚDO PRINCIPAL */ 
 .main-content {
     margin-left: 300px;
     flex: 1;

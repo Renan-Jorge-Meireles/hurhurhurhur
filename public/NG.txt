@@ -1,0 +1,219 @@
+Documentação do Sistema JukeBox
+
+
+- Visão Geral
+O Sistema JukeBox é uma aplicação web completa para gestão de uma empresa, oferecendo controle de produtos, clientes, funcionários, vendas e relatórios. O sistema foi desenvolvido com foco em usabilidade e eficiência para operações comerciais.
+
+- Estrutura do Sistema
+Páginas Principais
+index.html - Página inicial com dashboard e acesso rápido a todas as funcionalidades
+
+produto.html - Gestão de produtos e estoque
+
+cliente.html - Cadastro e gestão de clientes
+
+funcionarios.html - Controle de funcionários
+
+venda.html - Processamento de vendas
+
+relatorios.html - Relatórios e análises
+
+fornecedor.html - Gestão de fornecedores
+
+Tecnologias Utilizadas
+Frontend: HTML5, CSS3, JavaScript (ES6+)
+
+Estilo: Design responsivo com CSS Grid e Flexbox
+
+Armazenamento: LocalStorage (para demonstração)
+
+Ícones: Font Awesome (em algumas páginas)
+
+- Estrutura de Arquivos
+text
+sistema-jukebox/
+├── index.html          # Página inicial
+├── index.css           # Estilos da página inicial
+├── produto.html        # Gestão de produtos
+├── produto.css         # Estilos da página de produtos
+├── produto.js          # Lógica da página de produtos
+├── cliente.html        # Gestão de clientes
+├── cliente.css         # Estilos da página de clientes
+├── cliente.js          # Lógica da página de clientes
+├── funcionarios.html   # Gestão de funcionários
+├── funcionario.css     # Estilos da página de funcionários
+├── funcionario.js      # Lógica da página de funcionários
+├── venda.html          # Processamento de vendas
+├── venda.css           # Estilos da página de vendas
+├── venda.js            # Lógica da página de vendas
+├── relatorios.html     # Relatórios
+├── relatorios.css      # Estilos da página de relatórios
+├── relatorios.js       # Lógica da página de relatórios
+├── fornecedor.html     # Gestão de fornecedores
+├── fornecedor.css      # Estilos da página de fornecedores
+├── fornecedor.js       # Lógica da página de fornecedores
+└── imagens/            # Diretório de imagens
+    ├── CCM.png         # Logo CCM
+    ├── Juke.png        # Logo Juke
+    └── Planet.png      # Logo Planet
+- Design e Interface
+Características de Design
+Layout responsivo que se adapta a dispositivos móveis e desktop
+
+Paleta de cores profissional com gradientes azuis
+
+Navegação lateral fixa com menu colapsável em mobile
+
+Cards interativos com efeitos hover
+
+Formulários organizados com CSS Grid
+
+Modais para edição de registros
+
+Componentes de Interface
+Sidebar: Navegação principal com links para todas as seções
+
+Formulários: Campos organizados com validação visual
+
+Tabelas: Apresentação de dados com estilo consistente
+
+Modais: Para edição de registros sem sair da página
+
+Cards: Para exibição de informações na página inicial
+
+- Funcionalidades por Módulo
+1. Módulo de Produtos
+Cadastro de produtos com nome, preço, categoria e descrição
+
+Controle de quantidade em estoque
+
+Associação com fornecedores
+
+Pesquisa avançada por nome, categoria ou fornecedor
+
+Edição de produtos existentes
+
+2. Módulo de Clientes
+Cadastro completo de clientes (nome, CPF, telefone, email, endereço)
+
+Pesquisa por CPF
+
+Listagem de todos os clientes
+
+Edição de dados dos clientes
+
+3. Módulo de Funcionários
+Cadastro de funcionários com dados completos
+
+Pesquisa avançada por diversos critérios
+
+Gestão de informações da equipe
+
+4. Módulo de Vendas
+Busca de clientes por CPF
+
+Seleção de produtos com quantidade
+
+Cálculo automático de totais e subtotais
+
+Finalização de vendas
+
+Carrinho de compras com opção de remover itens
+
+5. Módulo de Relatórios
+Filtros por CPF do cliente, produto e período
+
+Visualização de vendas realizadas
+
+Tabela de relatórios com dados detalhados
+
+6. Módulo de Fornecedores
+Cadastro de fornecedores (nome, CNPJ, telefone)
+
+Pesquisa por CNPJ
+
+Listagem e edição de fornecedores
+
+- Funcionalidades Técnicas
+Persistência de Dados
+Uso de LocalStorage para armazenamento local (para demonstração)
+
+Estrutura de dados consistente entre módulos
+
+Validações
+Validação de campos obrigatórios
+
+Formatação automática de valores (como preços)
+
+Validação de CPF/CNPJ (formato)
+
+Verificação de quantidades numéricas
+
+Responsividade
+Menu lateral colapsável em dispositivos móveis
+
+Ajuste de layouts para diferentes tamanhos de tela
+
+Botão de toggle para abrir/fechar menu em mobile
+
+- Como Utilizar o Sistema
+Primeiro Acesso
+Abra o arquivo index.html em um navegador web
+
+Navegue pelos módulos usando o menu lateral
+
+Comece cadastrando produtos, clientes e funcionários
+
+Fluxo de Venda
+Acesse o módulo de Vendas
+
+Informe o CPF do cliente para carregar seus dados
+
+Selecione os produtos e quantidades desejadas
+
+Revise o carrinho e finalize a venda
+
+Geração de Relatórios
+Acesse o módulo de Relatórios
+
+Aplique os filtros desejados (cliente, produto, período)
+
+Visualize os resultados na tabela
+
+- Integração com Backend
+O sistema está preparado para integração com APIs RESTful, com endpoints configurados para:
+
+Clientes: /clientes, /clientes/{cpf}
+
+Produtos: /produtos, /produtos_carrinho/{id}
+
+Vendas: /vendas (POST)
+
+Relatórios: /relatorios (GET com parâmetros de filtro)
+
+Fornecedores: /fornecedores
+
+- Melhorias Futuras
+Implementação de autenticação e autorização de usuários
+
+Conexão com banco de dados real
+
+Sistema de backup de dados
+
+Relatórios mais avançados com gráficos
+
+Integração com gateways de pagamento
+
+Controle de permissões por tipo de usuário
+
+- Notas de Desenvolvimento
+O sistema foi desenvolvido com JavaScript vanilla para fácil manutenção
+
+O CSS foi organizado de forma modular para cada página
+
+A responsividade foi priorizada em todo o desenvolvimento
+
+Código comentado para facilitar entendimento e manutenção
+
+Esta documentação fornece uma visão geral do Sistema JukeBox. Para detalhes específicos de implementação, consulte os comentários no código-fonte de cada arquivo.
+
