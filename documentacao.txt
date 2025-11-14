@@ -1,10 +1,10 @@
 # Documentação do Sistema JukeBox
 
-## 📋 Visão Geral
+## Visão Geral
 
 O Sistema JukeBox é uma aplicação web completa para gestão de uma empresa, oferecendo controle de produtos, clientes, funcionários, vendas e relatórios. O sistema foi desenvolvido com foco em usabilidade e eficiência para operações comerciais.
 
-## 🏗️ Estrutura do Sistema
+## Estrutura do Sistema
 
 ### Páginas Principais
 
@@ -23,7 +23,7 @@ O Sistema JukeBox é uma aplicação web completa para gestão de uma empresa, o
 - **Armazenamento**: LocalStorage (para demonstração)
 - **Ícones**: Font Awesome (em algumas páginas)
 
-## 📁 Estrutura de Arquivos
+## Estrutura de Arquivos
 
 ```
 sistema-jukebox/
@@ -53,7 +53,7 @@ sistema-jukebox/
     └── Planet.png      # Logo Planet
 ```
 
-## 🎨 Design e Interface
+## Design e Interface
 
 ### Características de Design
 - Layout responsivo que se adapta a dispositivos móveis e desktop
@@ -70,7 +70,7 @@ sistema-jukebox/
 - **Modais**: Para edição de registros sem sair da página
 - **Cards**: Para exibição de informações na página inicial
 
-## ⚙️ Funcionalidades por Módulo
+## Funcionalidades por Módulo
 
 ### 1. Módulo de Produtos
 - Cadastro de produtos com nome, preço, categoria e descrição
@@ -107,7 +107,7 @@ sistema-jukebox/
 - Pesquisa por CNPJ
 - Listagem e edição de fornecedores
 
-## 🔧 Funcionalidades Técnicas
+## Funcionalidades Técnicas
 
 ### Persistência de Dados
 - Uso de LocalStorage para armazenamento local (para demonstração)
@@ -124,7 +124,7 @@ sistema-jukebox/
 - Ajuste de layouts para diferentes tamanhos de tela
 - Botão de toggle para abrir/fechar menu em mobile
 
-## 🚀 Como Utilizar o Sistema
+## Como Utilizar o Sistema
 
 ### Primeiro Acesso
 1. Abra o arquivo `index.html` em um navegador web
@@ -142,7 +142,7 @@ sistema-jukebox/
 2. Aplique os filtros desejados (cliente, produto, período)
 3. Visualize os resultados na tabela
 
-## 🔌 Integração com Backend
+## Integração com Backend
 
 O sistema está preparado para integração com APIs RESTful, com endpoints configurados para:
 
@@ -152,7 +152,7 @@ O sistema está preparado para integração com APIs RESTful, com endpoints conf
 - **Relatórios**: `/relatorios` (GET com parâmetros de filtro)
 - **Fornecedores**: `/fornecedores`
 
-## 🎯 Melhorias Futuras
+## Melhorias Futuras
 
 1. Implementação de autenticação e autorização de usuários
 2. Conexão com banco de dados real
@@ -161,7 +161,7 @@ O sistema está preparado para integração com APIs RESTful, com endpoints conf
 5. Integração com gateways de pagamento
 6. Controle de permissões por tipo de usuário
 
-## 📝 Notas de Desenvolvimento
+## Notas de Desenvolvimento
 
 - O sistema foi desenvolvido com JavaScript vanilla para fácil manutenção
 - O CSS foi organizado de forma modular para cada página
@@ -169,3 +169,4 @@ O sistema está preparado para integração com APIs RESTful, com endpoints conf
 - Código comentado para facilitar entendimento e manutenção
 
 ---
+
