@@ -169,5 +169,3 @@ O sistema está preparado para integração com APIs RESTful, com endpoints conf
 - Código comentado para facilitar entendimento e manutenção
 
 ---
-
-Esta documentação fornece uma visão geral do Sistema JukeBox. Para detalhes específicos de implementação, consulte os comentários no código-fonte de cada arquivo.
